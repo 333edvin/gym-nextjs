@@ -17,7 +17,7 @@ const Hero = () => {
                         <div className="flex flex-col justify-center items-start w-full h-screen   px-5 md:px-20 space-y-6">
                         <span className="mb-0 md:mb-4 border p-1 text-uppercase ">Gym fitness club</span>
                         <h1 className="font-bold text-4xl md:text-7xl mb-5">Step up your <br /> <span className="text-orange-500">fitness Challange</span><br />with us</h1>
-                        <a href="pricing.html"  className="btn  p-3 bg-orange-500 ">Join Us <i className="ti-angle-right ml-3" /></a>
+                        <button href="pricing.html"  className="btn  p-3 bg-orange-500 ">Join Us <i className="ti-angle-right ml-3" /></button>
                         </div>
                         <div className=" relative right-3 md:right-10">
                             <Image src={dumbbell} alt="dumbbell" className="w-20 md:w-32 h-full"/>

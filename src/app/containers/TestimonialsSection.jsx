@@ -46,7 +46,7 @@ const Testimonials = () => {
       <div className=" mx-auto">
         <div className="text-center mb-12">
           <div className="mb-3">
-            <div className="w-16 h-1 mx-auto bg-yellow-400"></div>
+            <div className="w-16 h-1 mx-auto bg-orange-400"></div>
           </div>
           <h2 className="text-white text-3xl font-semibold">What People Say</h2>
         </div>
@@ -58,7 +58,7 @@ const Testimonials = () => {
           <div className="flex transition-transform ease-out duration-500 p-10" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="min-w-full text-center p-6 rounded-lg">
-                <i className="text-4xl text-yellow-400">&#8220;</i>
+                <i className="text-4xl text-orange-400">&#8220;</i>
                 <h3 className="mt-4 text-white text-xl font-semibold">{testimonial.quote}</h3>
                 <p className="my-4 text-gray-300">{testimonial.text}</p>
                 <div>
@@ -72,13 +72,13 @@ const Testimonials = () => {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrevSlide}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-yellow-400 text-white p-2 rounded-full"
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-orange-400 text-2xl text-white p-2 rounded-full"
           >
             &#8249;
           </button>
           <button
             onClick={handleNextSlide}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-yellow-400 text-white p-2 rounded-full"
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-orange-400 text-2xl text-white p-2 rounded-full"
             >
             &#8250;
           </button>

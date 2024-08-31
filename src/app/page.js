@@ -12,41 +12,44 @@ import Preloader from "./components/Preloader";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const lenis = new Lenis({
-    duration: 1.8,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smooth: true,           
-    smoothTouch: true,       
-    touchMultiplier: 1.5,    
-  });
-
-  function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-  }
-
-  requestAnimationFrame(raf)
-
 
   useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.8,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+      smoothTouch: true,
+      touchMultiplier: 1.5,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
     // Show preloader for 3 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000); // 3000 milliseconds = 3 seconds
 
     // Cleanup function
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      lenis.destroy(); // Clean up Lenis instance
+    };
   }, []);
+
   return (
-    <main >
-       {isLoading && <Preloader />}
-      <Hero/>
-      <About/>
-      <Services/>
-      <Gallery/>
-      <Testimonials/>
+    <main>
+      {isLoading && <Preloader />}
+      <Hero />
+      <About />
+      <Services />
+      <Gallery />
+      <Testimonials />
       {/* <CTA/> */}
     </main>
-
   );
 }
